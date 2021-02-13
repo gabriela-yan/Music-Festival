@@ -1,0 +1,42 @@
+.header{
+    background-color: $blueDark;
+    &-content {
+        padding: $break / 2 0;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    h1 {
+        color: $blueLight;
+        margin-bottom: 1rem;
+        text-align: center;
+        @include fold {
+            font-size: 3rem;
+        }
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.navigation-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    justify-items: center;
+    a {
+        color: $blueLight;
+        font-size: 2rem;
+        &:hover {
+            color: $white;
+        }
+        @include fold {
+            font-size: 1.6rem;
+        }
+    }
+    
+}
+
