@@ -401,6 +401,14 @@ h3 {
   font-size: 3rem;
 }
 
+.bg-blueDark {
+  background-color: #212C3D;
+}
+
+.bg-blueLight {
+  background-color: #7795C3;
+}
+
 .header {
   background-color: #212C3D;
 }
@@ -566,4 +574,72 @@ h3 {
 }
 .content-festival .text {
   line-height: 1.5;
+}
+
+.lineup {
+  background-color: #0F1724;
+  padding: 5rem 0;
+}
+.lineup h3, .lineup p {
+  text-align: center;
+  color: #DAE8FE;
+}
+.lineup .day {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .scenarios-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+}
+.scenarios-container .scenario {
+  padding-top: 2.5rem;
+}
+.scenarios-container .stage-name {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.scenarios-container .stage-name:after {
+  content: "";
+  width: 100%;
+  height: 10rem;
+  display: block;
+  margin: 2rem auto 0 auto;
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.edm .stage-name:after {
+  background-image: url(../img/icon_edm.png);
+}
+
+.rock .stage-name:after {
+  background-image: url(../img/icon_rock.png);
+}
+
+.calendar {
+  padding: 0;
+  list-style: none;
+}
+.calendar li {
+  color: #FFFFFF;
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendar li span {
+  font-weight: 400;
+}
+
+.bg-blueLight .calendar li:nth-child(2n+1) {
+  background-color: #5479b3;
+}
+
+.bg-blueDark .calendar li:nth-child(2n+1) {
+  background-color: #33445e;
 }

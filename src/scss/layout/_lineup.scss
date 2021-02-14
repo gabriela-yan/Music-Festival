@@ -1,0 +1,65 @@
+.lineup {
+    background-color: $blueBgDark;
+    padding: $break 0;
+    h3, p {
+        text-align: center;
+        color: $light;
+    }
+    .day {
+        text-align: center;
+        text-transform: uppercase;
+        margin: $break 0;
+    }
+}
+.scenarios-container {
+    @include tablet{
+        @include grid(2, $break)
+    }
+    .scenario {
+        padding-top: $break / 2;
+    }
+    .stage-name {
+        font-size: 2rem;
+        font-weight: $lightFont;
+        &:after {
+            content: '';
+            width: 100%;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}
+.edm .stage-name {
+    &:after {
+        background-image: url(../img/icon_edm.png);
+    }
+}
+
+.rock .stage-name {
+    &:after {
+        background-image: url(../img/icon_rock.png);
+    }
+}
+.calendar {
+    padding: 0;
+    list-style: none;
+    li {
+        color: $white;
+        padding: $break / 2;
+        font-weight: $boldFont;
+        span {
+            font-weight: $regularFont;
+        }
+        
+    }
+}
+.bg-blueLight .calendar li:nth-child(2n+1) {
+    background-color: darken($color: $blueLight, $amount: 10);
+}
+.bg-blueDark .calendar li:nth-child(2n+1) {
+    background-color: lighten($color: $blueDark, $amount: 10)
+}
