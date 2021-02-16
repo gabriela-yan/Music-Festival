@@ -5,6 +5,9 @@ html {
 body {
     font-family: $mainFont;
     font-size: 1.6rem;
+    &.body-fixed {
+        overflow: hidden;
+    }
 }
 p {
     font-size: 1.8rem;

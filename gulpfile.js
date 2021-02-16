@@ -8,10 +8,13 @@ const sass = require('gulp-dart-sass');
 const imagemin = require('gulp-imagemin');
 const notify = require("gulp-notify");
 const webp = require('gulp-webp');
+var concat = require('gulp-concat');
 
+/*  * = Current folder, ** = All files with that extension  */
 const paths = {
     images: 'src/img/**/*',
-    scss: 'src/scss/**/*.scss'
+    scss: 'src/scss/**/*.scss',
+    js: 'src/js/**/*.js'
 }
 
 /**
@@ -45,6 +48,21 @@ function minifycss(){
             outputStyle: 'compressed'
         }))
         .pipe(dest('./build/css'))
+}
+/**
+ * javascript.
+ *
+ * @author	Gabriela Yan
+ * @since	v0.0.1
+ * @version	v1.0.0	Monday, February 15th, 2021.
+ * @global
+ * @return	mixed
+ * @description Trace the code from the src/js/app.js file to build/js/bundle.js file
+ */
+function javascript() {
+    return src(paths.js)
+        .pipe(concat('bundle.js'))
+        .pipe(dest('./build/js'))
 }
 /**
  * imagesmin.
@@ -89,8 +107,8 @@ function versionWebp() {
  * @description Execute the css function when presenting changes in the app.css file
  */
 function watchFiles(){
-    /*  * = Current folder, ** = All files with that extension  */
     watch(paths.scss, css);
+    watch(paths.js, javascript);
 }
 
 exports.css = css;
@@ -98,4 +116,4 @@ exports.minifycss = minifycss;
 exports.imagesMin = imagesMin;
 exports.watchFiles = watchFiles;
 
-exports.default = series(imagesMin, versionWebp, watchFiles);
+exports.default = series(css, javascript ,imagesMin, versionWebp, watchFiles);
