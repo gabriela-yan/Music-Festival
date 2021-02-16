@@ -11,7 +11,7 @@
         margin: $break 0;
     }
 }
-.scenarios-container {
+.scenarios-content {
     @include tablet{
         @include grid(2, $break)
     }

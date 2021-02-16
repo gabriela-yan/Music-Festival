@@ -45,13 +45,16 @@ function showImage(event) {
     const id = parseInt(event.target.dataset.imageId);
     const image = document.createElement('IMG');
     image.src = `build/img/grande/${id}.webp`;
-    
+
+    image.classList.add('big-image');
+
     const overlay = document.createElement('DIV');
     overlay.appendChild(image);
     overlay.classList.add('overlay');
 
     overlay.onclick = function(){
         overlay.remove();
+        body.classList.remove('body-fixed');
     }
 
     const closeImage = document.createElement('P');
@@ -60,6 +63,7 @@ function showImage(event) {
 
     closeImage.onclick = function(){
         overlay.remove();
+        body.classList.remove('body-fixed');
     }
 
     overlay.appendChild(closeImage);

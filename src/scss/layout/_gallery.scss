@@ -18,6 +18,12 @@
         @include grid(6, $break / 2);
     }
 }
+.big-image {
+    max-width: 90%;
+    @include tablet {
+        max-width: 65%;
+    }
+}
 .overlay {
     position: fixed;
     background-color: rgba($color: $black, $alpha: .5);

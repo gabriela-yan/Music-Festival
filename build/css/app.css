@@ -426,7 +426,7 @@ h3 {
   }
 }
 .header h1 {
-  color: #7795C3;
+  color: #DAE8FE;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -550,32 +550,32 @@ h3 {
   }
 }
 
-.content-festival {
+.festival-content {
   margin-top: 2rem;
 }
 @media (min-width: 768px) {
-  .content-festival {
+  .festival-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 0;
   }
 }
-.content-festival h2 {
+.festival-content h2 {
   font-size: 3rem;
   color: #212C3D;
 }
 @media (max-width: 280px) {
-  .content-festival h2 {
+  .festival-content h2 {
     font-size: 2.8rem;
   }
 }
-.content-festival .date {
+.festival-content .date {
   margin-top: 3rem;
   color: #666666;
   font-weight: 700;
 }
-.content-festival .text {
+.festival-content .text {
   line-height: 1.5;
 }
 
@@ -594,20 +594,20 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  .scenarios-container {
+  .scenarios-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem;
   }
 }
-.scenarios-container .scenario {
+.scenarios-content .scenario {
   padding-top: 2.5rem;
 }
-.scenarios-container .stage-name {
+.scenarios-content .stage-name {
   font-size: 2rem;
   font-weight: 300;
 }
-.scenarios-container .stage-name:after {
+.scenarios-content .stage-name:after {
   content: "";
   width: 100%;
   height: 10rem;
@@ -679,6 +679,15 @@ h3 {
   }
 }
 
+.big-image {
+  max-width: 90%;
+}
+@media (min-width: 768px) {
+  .big-image {
+    max-width: 65%;
+  }
+}
+
 .overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
@@ -701,4 +710,24 @@ h3 {
 }
 .btn-close:hover {
   cursor: pointer;
+}
+
+.tickets {
+  padding: 5rem 0;
+}
+.tickets h3 {
+  text-align: center;
+  color: #DAE8FE;
+}
+.tickets .tickets-content {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+}
+.tickets .plan p {
+  color: #DAE8FE;
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
