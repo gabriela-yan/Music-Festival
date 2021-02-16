@@ -412,6 +412,10 @@ h3 {
   background-color: #7795C3;
 }
 
+.bg-blueBgDark {
+  background-color: #0F1724;
+}
+
 .header {
   background-color: #212C3D;
 }
@@ -426,7 +430,7 @@ h3 {
   }
 }
 .header h1 {
-  color: #DAE8FE;
+  color: #7795C3;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -721,13 +725,61 @@ h3 {
 }
 .tickets .tickets-content {
   margin-top: 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 5rem;
+}
+@media (min-width: 768px) {
+  .tickets .tickets-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
 }
 .tickets .plan p {
   color: #DAE8FE;
   font-size: 2.4rem;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.pass {
+  width: 100%;
+  border-spacing: 0;
+}
+.pass thead {
+  background-color: #11ece5;
+}
+.pass thead th {
+  padding: 1.25rem;
+  color: #0F1724;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.pass tbody {
+  background-color: #EEEEEE;
+}
+.pass tbody td {
+  padding: 1.25rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+.pass tbody tr:last-of-type td {
+  border: none;
+}
+.pass tfoot {
+  background-color: #212C3D;
+}
+.pass tfoot td {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #EEEEEE;
+}
+
+.footer {
+  background-color: #666666;
+  padding: 1.25rem;
+  text-align: center;
+}
+.footer p {
+  color: #EEEEEE;
+  margin: 0;
 }
