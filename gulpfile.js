@@ -8,7 +8,13 @@ const sass = require('gulp-dart-sass');
 const imagemin = require('gulp-imagemin');
 const notify = require("gulp-notify");
 const webp = require('gulp-webp');
-var concat = require('gulp-concat');
+const concat = require('gulp-concat');
+
+/* CSS utilities */
+const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const sourcemaps = require('gulp-sourcemaps');
 
 /*  * = Current folder, ** = All files with that extension  */
 const paths = {
@@ -25,28 +31,17 @@ const paths = {
  * @version	v1.0.0	Monday, February 8th, 2021.
  * @global
  * @return	
- * @description Compiled code from the src/scss/app.scss file to build/css/app.css file
+ * @description Compiled code from the src/scss/app.scss file to build/css/app.css file,
+ * PostCSS plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use,
+ * Cssnano compress the code in the app.css file, 
+ * To write external source map files, pass a path relative to the destination to sourcemaps.write()
  */
 function css( ) {
     return src(paths.scss)
+        .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(dest('./build/css'))
-}
-/**
- * minifyCSS.
- *
- * @author	Gabriela Yan
- * @since	v0.0.1
- * @version	v1.0.0	Monday, February 8th, 2021.
- * @global
- * @return	
- * @description Minify the code in the app.css file
- */
-function minifycss(){
-    return src(paths.scss)
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }))
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('./build/css'))
 }
 /**
@@ -112,7 +107,6 @@ function watchFiles(){
 }
 
 exports.css = css;
-exports.minifycss = minifycss;
 exports.imagesMin = imagesMin;
 exports.watchFiles = watchFiles;
 
